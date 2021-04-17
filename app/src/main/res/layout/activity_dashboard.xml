@@ -11,13 +11,15 @@
         android:layout_height="match_parent">
 
         <androidx.appcompat.widget.Toolbar
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
-            app:layout_constraintStart_toStartOf="parent"
             app:navigationIcon="@drawable/reorder_24" />
 
         <TextView
