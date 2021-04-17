@@ -31,14 +31,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }, SPLASH_TIME_OUT );
 
 
-            about.setOnClickListener(this);
-            service.setOnClickListener(this);
-            permit.setOnClickListener(this);
-            guideline.setOnClickListener(this);
-            stakeholders.setOnClickListener(this);
-            complaint.setOnClickListener(this);
-
-            // Defining CardViews
 
             about=(CardView) findViewById(R.id.about_card);
             service=(CardView)findViewById(R.id.service_card);
@@ -48,6 +40,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             complaint=(CardView)findViewById(R.id.complaint_card);
 
             //Add listener to the card
+
+            about.setOnClickListener(this);
+            service.setOnClickListener(this);
+            permit.setOnClickListener(this);
+            guideline.setOnClickListener(this);
+            stakeholders.setOnClickListener(this);
+            complaint.setOnClickListener(this);
+
+            // Defining CardViews
+
 
 
 
