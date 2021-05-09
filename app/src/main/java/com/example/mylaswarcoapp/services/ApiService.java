@@ -94,7 +94,11 @@ public class ApiService {
             @Override
             public void onResponse(String response) {
 
-                payloadInterface.completed(response);
+                try {
+                    payloadInterface.completed(new JSONObject(response));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 payloadInterface.loadStop();
 
             }
@@ -153,11 +157,12 @@ public class ApiService {
 
         PayLoadData getPayload(PayLoadData payLoadData);
         void completed(JSONObject jsonObject);
-        void completed(String response);
+//        void completed(String response);
         void error(String errorMessage);
         void loadStart();
         void loadStop();
         String getBearerToken();
+        void setBearerToken(String token);
 
     }
 
