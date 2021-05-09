@@ -9,7 +9,7 @@ public class ComplaintService {
         ApiService.get("http://espconcept.com/lagos-state-water-corp/public/api/token/create", payloadInterface);
     }
 
-    static void send(ApiService.PayloadInterface payloadInterface){
+    public static void send(ApiService.PayloadInterface payloadInterface){
 
         getToken(new ApiService.PayloadInterface() {
             @Override

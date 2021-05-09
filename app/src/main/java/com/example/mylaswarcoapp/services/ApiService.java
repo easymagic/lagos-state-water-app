@@ -128,7 +128,7 @@ public class ApiService {
 
 
 
-    static class PayLoadData{
+    public static class PayLoadData{
 
         JSONObject jsonObject = null;
 
@@ -153,7 +153,7 @@ public class ApiService {
     }
 
 
-    interface PayloadInterface{
+   public interface PayloadInterface{
 
         PayLoadData getPayload(PayLoadData payLoadData);
         void completed(JSONObject jsonObject);
