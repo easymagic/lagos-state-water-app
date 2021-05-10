@@ -49,6 +49,8 @@ public class Complaint extends AppCompatActivity {
 
         progressDialog = new ProgressDialog(this);
 
+        ApiService.initContext(this);
+
         findViewById(R.id.submit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
