@@ -80,7 +80,9 @@ public class Complaint extends AppCompatActivity {
                     }
 
                     @Override
-                    public void error(String errorMessage) {
+                    public void error(String errorMessage){
+
+                        showMessage(errorMessage);
 
                     }
 
