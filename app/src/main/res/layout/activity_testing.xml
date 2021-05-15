@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Permit">
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/ic_launcher_background"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/menu_navigation" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/RelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@color/colorPrimary"
+                android:padding="20dp">
+
+
+                <TextView
+                    android:id="@+id/Permit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="44dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:includeFontPadding="false"
+                    android:text="Testing Center"
+                    android:textColor="#fff"
+                    android:textSize="25sp" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layoutpgimg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-100dp"
+                android:padding="10dp">
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardviewimg"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:elevation="@dimen/cardview_compat_inset_shadow">
+
+                    <RelativeLayout
+                        android:id="@+id/imgabt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/testing">
+
+                    </RelativeLayout>
+
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0px"
+                android:padding="5dp"
+                android:layout_marginBottom="0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/raleway_medium"
+                    android:lineSpacingExtra="5dp"
+                    android:padding="10dp"
+                    android:text="@string/testing"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0px"
+                android:padding="5dp"
+                android:layout_marginBottom="0dp">
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    app:cardElevation="3dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/raleway_medium"
+                        android:lineSpacingExtra="2dp"
+                        android:padding="10dp"
+                        android:drawableLeft="@drawable/ic_baseline_map_24"
+                        android:drawablePadding="10dp"
+                        android:text="The Secretariat Complex Block 19, 3rd Floor, Alausa, Ikeja, Lagos State." />
+
+
+
+
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0px"
+                android:padding="5dp"
+                android:layout_marginBottom="0dp">
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    app:cardElevation="3dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:fontFamily="@font/raleway_medium"
+                        android:drawableLeft="@drawable/phone_callback"
+                        android:drawablePadding="10dp"
+                        android:text="09061110066, 09030000307, 08009283734, 07009283734"
+                        android:lineSpacingExtra="2dp"/>
+
+
+
+
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0px"
+                android:padding="5dp"
+                android:layout_marginBottom="60dp">
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    app:cardElevation="3dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:fontFamily="@font/raleway_medium"
+                        android:drawableLeft="@drawable/alternate_email_at"
+                        android:drawablePadding="10dp"
+                        android:text="lagoswatereg@lagosstate.gov.ng"
+                        android:lineSpacingExtra="2dp"/>
+
+
+
+
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

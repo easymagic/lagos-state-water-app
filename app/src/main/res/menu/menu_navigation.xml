@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/Bottom_Dashboard"
+        android:title="Dashboard"
+        android:icon="@drawable/dashboard"/>
+
+<item android:id="@+id/Bottom_Faqs"
+        android:title="Faq's"
+        android:icon="@drawable/campaign"/>
+
+
+<item android:id="@+id/Bottom_Complaint"
+        android:title="Complaint"
+        android:icon="@drawable/chat"/>
+
+<item android:id="@+id/Bottom_Contact"
+        android:title="Contact"
+        android:icon="@drawable/email"/>
+</menu>

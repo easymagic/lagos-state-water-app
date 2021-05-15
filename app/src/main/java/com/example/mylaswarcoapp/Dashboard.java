@@ -1,32 +1,70 @@
 package com.example.mylaswarcoapp;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
-public class Dashboard extends AppCompatActivity  implements View.OnClickListener  {
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
-    CardView about, service, permit,  guideline, stakeholders, complaint ;
+public class Dashboard extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
 
+
+    CardView about, service, permit, guideline, stakeholders, complaint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+
+
+
         init();
+
+        //Variables
+        DrawerLayout drawerLayout;
+        Toolbar toolbar;
+        NavigationView navigationView;
+
+        //Hooks
+        drawerLayout = findViewById(R.id.drawer_layout);
+        toolbar = findViewById(R.id.toolbar);
+        navigationView = findViewById(R.id.nav_view);
+
+        //Toolbar
+        setSupportActionBar(toolbar);
+
+
+        //Navigation Menu
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.naigation_drawer_open, R.string.naigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        // Clickable Menu
+        navigationView.setNavigationItemSelectedListener(this);
+
     }
 
-    void init(){
-        about=(CardView) findViewById(R.id.about_card);
-        service=(CardView)findViewById(R.id.service_card);
-        permit= (CardView)findViewById(R.id.permit_card);
-        guideline=(CardView)findViewById(R.id.guideline_card);
-        stakeholders=(CardView)findViewById(R.id.stakeholders_card);
-        complaint=(CardView)findViewById(R.id.complaint_card);
+
+    //
+    void init() {
+
+        about = (CardView) findViewById(R.id.about_card);
+        service = (CardView) findViewById(R.id.service_card);
+        permit = (CardView) findViewById(R.id.permit_card);
+        guideline = (CardView) findViewById(R.id.guideline_card);
+        stakeholders = (CardView) findViewById(R.id.stakeholders_card);
+        complaint = (CardView) findViewById(R.id.testing_card);
 
         //Add listener to the card
 
@@ -37,20 +75,109 @@ public class Dashboard extends AppCompatActivity  implements View.OnClickListene
         stakeholders.setOnClickListener(this);
         complaint.setOnClickListener(this);
 
-        // Defining CardViews
+
     }
 
+
     @Override
-    public void onClick(View view) {
+    public void onClick(View v) {
         Intent i;
-        switch (view.getId()){
-            case R.id.about_card: i=new Intent(this,About.class); startActivity(i); break;
-            case R.id.service_card: i=new Intent(this,Service.class); startActivity(i);break;
-            case R.id.permit_card: i=new Intent(this,Permit.class); startActivity(i);break;
-            case R.id.guideline_card: i=new Intent(this,Guideline.class); startActivity(i);break;
-            case R.id.stakeholders_card: i=new Intent(this,Stakeholders.class); startActivity(i);break;
-            case R.id.complaint_card: i=new Intent(this,Complaint.class); startActivity(i);break;
-            default:break;
+        switch (v.getId()) {
+            case R.id.about_card:
+                i = new Intent(this, About.class);
+                startActivity(i);
+                break;
+            case R.id.service_card:
+                i = new Intent(this, Service.class);
+                startActivity(i);
+                break;
+            case R.id.permit_card:
+                i = new Intent(this, Permit.class);
+                startActivity(i);
+                break;
+            case R.id.guideline_card:
+                i = new Intent(this, Guideline.class);
+                startActivity(i);
+                break;
+            case R.id.stakeholders_card:
+                i = new Intent(this, Stakeholders.class);
+                startActivity(i);
+                break;
+            case R.id.testing_card:
+                i = new Intent(this, TestingActivity.class);
+                startActivity(i);
+                break;
+            default:
+                break;
         }
+    }
+
+    //Navigation clickable function
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+       /* switch (menuItem.getItemId()){
+
+            case R.id.nav_home:
+                Intent intent6=new Intent(Dashboard.this,Dashboard.class);
+                startActivity(intent6);
+                break;
+                case R.id.nav_about:
+                    Intent intent1=new Intent(Dashboard.this, About.class);
+                    startActivity(intent1);
+                break;
+            case R.id.nav_complaint:
+                Intent intent=new Intent(Dashboard.this,Complaint.class);
+                startActivity(intent);
+                break;
+
+            case R.id.nav_guild:
+                Intent intent2=new Intent(Dashboard.this,Guideline.class);
+                startActivity(intent2);
+                break;
+            case R.id.nav_stakeholders:
+                Intent intent3=new Intent(Dashboard.this,Stakeholders.class);
+                startActivity(intent3);
+                break;
+            case R.id.nav_permit:
+                Intent intent4=new Intent(Dashboard.this,Complaint.class);
+                startActivity(intent4);
+                break;
+            case R.id.nav_service:
+                Intent intent5=new Intent(Dashboard.this,Complaint.class);
+                startActivity(intent5);
+                break; */
+        int id=menuItem.getItemId();
+
+        if (id==R.id.nav_about) {
+            Intent intent = new Intent(this, About.class);
+            startActivity(intent);
+        }
+            if (id==R.id.nav_service){
+                Intent intent=new Intent(this, Service.class);
+                startActivity(intent);
+        }
+
+        if (id==R.id.nav_permit) {
+            Intent intent = new Intent(this, Permit.class);
+            startActivity(intent);
+        }
+        if (id==R.id.nav_guild){
+            Intent intent=new Intent(this, Guideline.class);
+            startActivity(intent);
+        }
+        if (id==R.id.nav_stakeholders){
+            Intent intent=new Intent(this, Stakeholders.class);
+            startActivity(intent);
+        }
+        if (id==R.id.nav_testing){
+            Intent intent=new Intent(this, TestingActivity.class);
+            startActivity(intent);
+        }
+        if (id==R.id.nav_home){
+            Intent intent=new Intent(Dashboard.this, Dashboard.class);
+            startActivity(intent);
+        }
+        return true;
     }
 }

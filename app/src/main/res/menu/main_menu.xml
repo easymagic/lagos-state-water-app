@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/about"
+            android:title="About Us" />
+        <item
+            android:id="@+id/nav_service"
+            android:icon="@drawable/services_"
+            android:title="Our Services" />
+        <item
+            android:id="@+id/nav_permit"
+            android:icon="@drawable/_pdf"
+            android:title="Download Application Form" />
+        <item
+            android:id="@+id/nav_guild"
+            android:icon="@drawable/compliance_"
+            android:title="Compliance Guidelines" />
+        <item
+            android:id="@+id/nav_stakeholders"
+            android:icon="@drawable/stakeholders_"
+            android:title="Stakeholders" />
+        <item
+            android:id="@+id/nav_testing"
+            android:icon="@drawable/testing_"
+            android:title="Testing Center" />
+    </group>
+</menu>

@@ -1,3 +1,52 @@
 <resources>
     <string name="app_name">MyLASWARCOApp</string>
+    <string name="naigation_drawer_open">Open navigation drawer </string>
+    <string name="naigation_drawer_close">Close navigation drawer </string>
+    <string name="title_activity_testing">TestingActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="paraghraph">
+        <b>About LARWASCO</b>
+        \n\n
+        In a bid to reorganize the State’s water sector for effective service delivery and to encourage competitive, the Commission was created  through the Water Sector Law 2004.</string>
+
+    <string name="vision">
+
+        <b>OUR VISION</b>\n\n
+To achieve a water and waste water sector that ensures the delivery of efficient, qualitative and sustainable water supply and waste water management service for present and future inhabitants of the state.</string>
+
+    <string name="mandate">
+
+        <b>OUR MANDATE</b>\n\n
+Ensure water supply and wastewater management services are properly carried out in Lagos State.
+\n\n
+Ensure operators in the sector secure reasonable return on investment to finance the proper delivery of these services and promote sustainability.</string>
+
+
+    <string name="borehole_permit"><b>Borehole Permit</b>
+\n\n
+        As part of its functions, LASWARCO regulates , monitor, control abstraction, consumption, distribution, supply, quality of service, sale and use of water and
+        tariff and charges payable to ensure financial stability of the water sector and regulate allowable returns to the operator.</string>
+
+    <string name="borehole_drillers_license"><b>Borehole Drillers License </b>
+        \n\n
+    To control and regulate the placement and drilling of boreholes in line with the best international standard and according to the Lagos State standard procedure. </string>
+    <string name="water_and_wastewater_treatment_plant_certification"><b>Water and Wastewater Treatment Plant Certification</b> \n\n
+We provide water and wastewater treatment plant certification for businesses that are into industrial use of water and wastewater services</string>
+    <string name="water_use_audit"><b>Water Use Audit</b> \n\n
+Water use audits, like their energy counterparts, are an important first step toward understanding both a facility’s water use and what can be done to reduce it.</string>
+    <string name="function"><b>FUNCTIONS OF THE COMMISSION</b>\n\n
+The Lagos State Water Regulatory Commission (LASWARCO) was created in a build to have a viable water sector in the year 2004 and commence operation fully in 2012,
+        the Water Sector Law 2004) was amended by the Environmental Management and Protection Law 2017.</string>
+
+    <string name="testing"><b>LASWARCO Testing Lab</b>\n\n
+
+Our full equipped laboratory performs a wide range of bacteriological and chemical tests on drinking water supplies, such as drinking water, surface water, groundwater, and sewage water.</string>
+
 </resources>
