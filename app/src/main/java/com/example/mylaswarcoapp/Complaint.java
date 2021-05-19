@@ -11,13 +11,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.mylaswarcoapp.base.BaseActivity;
 import com.example.mylaswarcoapp.services.ApiService;
 import com.example.mylaswarcoapp.services.ComplaintService;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONObject;
 
-public class Complaint extends AppCompatActivity {
+public class Complaint extends BaseActivity {
 
     ProgressDialog progressDialog = null;
 
@@ -50,17 +51,7 @@ public class Complaint extends AppCompatActivity {
         alt.show();
     }
 
-    void initNavigation(){
-        BottomNavigationView bottomNavigationView =findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item){
-                return navSelected(item);
-            }
-
-        });
-    }
 
     void init(){
 
@@ -142,30 +133,5 @@ public class Complaint extends AppCompatActivity {
 
 
 
-    public boolean navSelected(@NonNull MenuItem menuitem) {
-
-        switch (menuitem.getItemId()) {
-            case R.id.Bottom_Faqs:
-                startActivity(new Intent(getApplicationContext(), Faqs.class));
-                overridePendingTransition(0, 0);
-                return true;
-
-            case R.id.Bottom_Dashboard:
-                startActivity(new Intent(getApplicationContext(),
-                        Dashboard.class));
-                overridePendingTransition(0, 0);
-                return true;
-            case R.id.Bottom_Complaint:
-
-                return true;
-
-            case R.id.Bottom_Contact:
-                startActivity(new Intent(getApplicationContext(),
-                        Contact.class));
-                overridePendingTransition(0, 0);
-                return true;
-        }
-        return false;
-    }
 
 }

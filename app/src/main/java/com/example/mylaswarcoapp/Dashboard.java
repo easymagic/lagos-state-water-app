@@ -26,8 +26,6 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.activity_dashboard);
 
 
-
-
         init();
 
         //Variables

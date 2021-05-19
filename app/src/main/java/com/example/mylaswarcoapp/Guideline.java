@@ -10,9 +10,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.mylaswarcoapp.base.BaseActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Guideline extends AppCompatActivity  {
+public class Guideline extends BaseActivity {
 
     CardView enablelaw, groundwater, drinkingwaterregulation,packagewater, watertanker, penalties;
 
@@ -21,41 +22,9 @@ public class Guideline extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guideline);
 
-        //Initialize and assign variable for bottom nav
-        BottomNavigationView bottomNavigationView =findViewById(R.id.bottom_navigation);
+        initNavigation();
 
-        // set dashboard selected
-        bottomNavigationView.setSelectedItemId(R.id.Bottom_Dashboard);
-
-        // Perform ItemSelectedListener
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
-
-                switch (menuitem.getItemId()){
-                    case R.id.Bottom_Faqs:
-                        startActivity(new Intent(getApplicationContext(), Faqs.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.Bottom_Dashboard:
-                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.Bottom_Complaint:
-                        startActivity(new Intent(getApplicationContext(),Complaint.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.Bottom_Contact:
-                        startActivity(new Intent(getApplicationContext(),Contact.class));
-                        overridePendingTransition(0,0);
-
-                        return true;
-                }
-                return false;
-            }
-        });
+        selectItem(R.id.Bottom_Dashboard);
 
         enablelaw=findViewById(R.id.card_enablelaw);
         groundwater=findViewById(R.id.card_groundwater);
@@ -64,48 +33,20 @@ public class Guideline extends AppCompatActivity  {
         watertanker=findViewById(R.id.card_watertanker);
         penalties=findViewById(R.id.card_penalties);
 
+        gotoUrlOnClick(enablelaw,"http://bytes.com.ng/laswarco/enabling-law/");
 
-        enablelaw.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotourl("http://bytes.com.ng/laswarco/enabling-law/");
-            }
-        });
-        drinkingwaterregulation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotourl("http://bytes.com.ng/laswarco/drinking-water-quality-regulation/");
-            }
-        });
-        groundwater.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotourl("http://bytes.com.ng/laswarco/groundwater-drilling-license-regulation/");
-            }
-        });
-        packagewater.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotourl("http://bytes.com.ng/laswarco/packaged-water-service-guidelines/");
-            }
-        });
-        watertanker.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotourl("http://bytes.com.ng/laswarco/water-tanker-practice-order/");
-            }
-        });
-        penalties.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotourl("http://bytes.com.ng/laswarco/offences-and-penalties/");
-            }
-        });
+        gotoUrlOnClick(drinkingwaterregulation,"http://bytes.com.ng/laswarco/drinking-water-quality-regulation/");
+
+        gotoUrlOnClick(groundwater,"http://bytes.com.ng/laswarco/groundwater-drilling-license-regulation/");
+
+        gotoUrlOnClick(packagewater,"http://bytes.com.ng/laswarco/packaged-water-service-guidelines/");
+
+        gotoUrlOnClick(watertanker,"http://bytes.com.ng/laswarco/water-tanker-practice-order/");
+
+        gotoUrlOnClick(penalties,"http://bytes.com.ng/laswarco/offences-and-penalties/");
+
     }
 
-    private void gotourl(String s) {
-        Uri uri=Uri.parse(s);
-        startActivity(new Intent(Intent.ACTION_VIEW,uri));
-    }
+
 
 }
