@@ -13,6 +13,7 @@ import android.widget.EditText;
 
 import com.example.mylaswarcoapp.services.ApiService;
 import com.example.mylaswarcoapp.services.ComplaintService;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONObject;
 
@@ -25,6 +26,7 @@ public class Complaint extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaint);
         init();
+        initNavigation();
     }
 
     String getInput(int res){
@@ -46,6 +48,18 @@ public class Complaint extends AppCompatActivity {
         alt.setMessage(message);
         alt.setTitle("Message");
         alt.show();
+    }
+
+    void initNavigation(){
+        BottomNavigationView bottomNavigationView =findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item){
+                return navSelected(item);
+            }
+
+        });
     }
 
     void init(){
@@ -128,7 +142,7 @@ public class Complaint extends AppCompatActivity {
 
 
 
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
+    public boolean navSelected(@NonNull MenuItem menuitem) {
 
         switch (menuitem.getItemId()) {
             case R.id.Bottom_Faqs:
