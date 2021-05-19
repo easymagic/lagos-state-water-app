@@ -3,54 +3,59 @@ package com.example.mylaswarcoapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.mylaswarcoapp.services.ApiService;
+import com.example.mylaswarcoapp.services.ComplaintService;
+
+import org.json.JSONObject;
 
 public class Complaint extends AppCompatActivity {
+
+    ProgressDialog progressDialog = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaint);
+        init();
+    }
 
-        //Initialize and assign variable for bottom nav
-        BottomNavigationView bottomNavigationView =findViewById(R.id.bottom_navigation);
+    String getInput(int res){
+        return  ((EditText)findViewById(res)).getText().toString();
+    }
 
-        // set dashboard selected
-        bottomNavigationView.setSelectedItemId(R.id.Bottom_Complaint);
 
-        // Perform ItemSelectedListener
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+    void loadStart_(){
+        progressDialog.setTitle("Sending ...");
+        progressDialog.show();
+    }
+
+    void loadStop_(){
+        progressDialog.hide();
+    }
+
+    void showMessage(String message){
+        AlertDialog.Builder alt = new AlertDialog.Builder(this);
+        alt.setMessage(message);
+        alt.setTitle("Message");
+        alt.show();
+    }
+
+    void init(){
+
+        progressDialog = new ProgressDialog(this);
+
+        ApiService.initContext(this);
+
+        findViewById(R.id.submit).setOnClickListener(new View.OnClickListener() {
             @Override
-<<<<<<< HEAD
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
-
-                switch (menuitem.getItemId()){
-                    case R.id.Bottom_Faqs:
-                        startActivity(new Intent(getApplicationContext(), Faqs.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.Bottom_Dashboard:
-                        startActivity(new Intent(getApplicationContext(),
-                                Dashboard.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.Bottom_Complaint:
-
-                        return true;
-
-                    case R.id.Bottom_Contact:
-                        startActivity(new Intent(getApplicationContext(),
-                                Contact.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-                return false;
-=======
             public void onClick(View v) {
 
                 final String[] token = {""};
@@ -111,8 +116,42 @@ public class Complaint extends AppCompatActivity {
 
 
 
->>>>>>> d4a4a387efc2d419b694cd5ba7a3f024f3438a82
             }
         });
+
     }
+
+
+
+
+
+
+
+
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
+
+        switch (menuitem.getItemId()) {
+            case R.id.Bottom_Faqs:
+                startActivity(new Intent(getApplicationContext(), Faqs.class));
+                overridePendingTransition(0, 0);
+                return true;
+
+            case R.id.Bottom_Dashboard:
+                startActivity(new Intent(getApplicationContext(),
+                        Dashboard.class));
+                overridePendingTransition(0, 0);
+                return true;
+            case R.id.Bottom_Complaint:
+
+                return true;
+
+            case R.id.Bottom_Contact:
+                startActivity(new Intent(getApplicationContext(),
+                        Contact.class));
+                overridePendingTransition(0, 0);
+                return true;
+        }
+        return false;
+    }
+
 }

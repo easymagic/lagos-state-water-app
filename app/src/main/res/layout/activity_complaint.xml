@@ -109,7 +109,7 @@
                     />
 
                 <EditText
-                    android:id="@+id/EmailAddress5"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -123,7 +123,7 @@
                     android:layout_marginBottom="10dp"
                     android:inputType="textEmailAddress" />
                 <EditText
-                    android:id="@+id/Address5"
+                    android:id="@+id/address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -138,7 +138,7 @@
                     android:inputType="textEmailAddress" />
 
                 <EditText
-                    android:id="@+id/Phone2"
+                    android:id="@+id/phone_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -152,7 +152,7 @@
                     android:inputType="phone" />
 
                 <EditText
-                    android:id="@+id/editTextTextMultiLine"
+                    android:id="@+id/comment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -168,7 +168,7 @@
                     android:inputType="textMultiLine" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/submit"
                     android:layout_width="match_parent"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="40dp"
