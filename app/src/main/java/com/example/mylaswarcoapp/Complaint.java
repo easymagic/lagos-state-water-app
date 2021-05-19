@@ -1,20 +1,12 @@
 package com.example.mylaswarcoapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 
 import com.example.mylaswarcoapp.base.BaseActivity;
 import com.example.mylaswarcoapp.services.ApiService;
 import com.example.mylaswarcoapp.services.ComplaintService;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONObject;
 
@@ -29,28 +21,6 @@ public class Complaint extends BaseActivity {
         init();
         initNavigation();
     }
-
-    String getInput(int res){
-        return  ((EditText)findViewById(res)).getText().toString();
-    }
-
-
-    void loadStart_(){
-        progressDialog.setTitle("Sending ...");
-        progressDialog.show();
-    }
-
-    void loadStop_(){
-        progressDialog.hide();
-    }
-
-    void showMessage(String message){
-        AlertDialog.Builder alt = new AlertDialog.Builder(this);
-        alt.setMessage(message);
-        alt.setTitle("Message");
-        alt.show();
-    }
-
 
 
     void init(){

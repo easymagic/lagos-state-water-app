@@ -12,10 +12,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.mylaswarcoapp.base.BaseActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
-public class Dashboard extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
+public class Dashboard extends BaseActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
 
 
     CardView about, service, permit, guideline, stakeholders, complaint;
@@ -81,33 +82,45 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         Intent i;
         switch (v.getId()) {
+
             case R.id.about_card:
-                i = new Intent(this, About.class);
-                startActivity(i);
+
+                loadActivity(About.class);
+
                 break;
+
             case R.id.service_card:
-                i = new Intent(this, Service.class);
-                startActivity(i);
+
+
+                loadActivity(Service.class);
+
                 break;
+
             case R.id.permit_card:
-                i = new Intent(this, Permit.class);
-                startActivity(i);
+
+                loadActivity(Permit.class);
+
                 break;
             case R.id.guideline_card:
-                i = new Intent(this, Guideline.class);
-                startActivity(i);
+
+                loadActivity(Guideline.class);
+
                 break;
+
             case R.id.stakeholders_card:
-                i = new Intent(this, Stakeholders.class);
-                startActivity(i);
+
+                loadActivity(Stakeholders.class);
+
                 break;
             case R.id.testing_card:
-                i = new Intent(this, TestingActivity.class);
-                startActivity(i);
+
+                loadActivity(TestingActivity.class);
+
                 break;
             default:
                 break;
         }
+
     }
 
     //Navigation clickable function
@@ -145,37 +158,54 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
                 Intent intent5=new Intent(Dashboard.this,Complaint.class);
                 startActivity(intent5);
                 break; */
-        int id=menuItem.getItemId();
+
+        int id = menuItem.getItemId();
 
         if (id==R.id.nav_about) {
-            Intent intent = new Intent(this, About.class);
-            startActivity(intent);
+
+            loadActivity(About.class);
+
         }
-            if (id==R.id.nav_service){
-                Intent intent=new Intent(this, Service.class);
-                startActivity(intent);
+
+        if (id==R.id.nav_service){
+
+            loadActivity(Service.class);
+
         }
 
         if (id==R.id.nav_permit) {
-            Intent intent = new Intent(this, Permit.class);
-            startActivity(intent);
+
+            loadActivity(Permit.class);
+
         }
+
         if (id==R.id.nav_guild){
-            Intent intent=new Intent(this, Guideline.class);
-            startActivity(intent);
+
+            loadActivity(Guideline.class);
+
         }
+
         if (id==R.id.nav_stakeholders){
-            Intent intent=new Intent(this, Stakeholders.class);
-            startActivity(intent);
+
+            loadActivity(Stakeholders.class);
+
         }
+
+
         if (id==R.id.nav_testing){
-            Intent intent=new Intent(this, TestingActivity.class);
-            startActivity(intent);
+
+
+            loadActivity(TestingActivity.class);
+
         }
+
         if (id==R.id.nav_home){
-            Intent intent=new Intent(Dashboard.this, Dashboard.class);
-            startActivity(intent);
+
+            loadActivity(Dashboard.class);
+
         }
+
         return true;
     }
+
 }

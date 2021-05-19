@@ -1,14 +1,18 @@
 package com.example.mylaswarcoapp.base;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.example.mylaswarcoapp.About;
 import com.example.mylaswarcoapp.Contact;
 import com.example.mylaswarcoapp.Dashboard;
 import com.example.mylaswarcoapp.Faqs;
@@ -18,6 +22,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class BaseActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView = null;
+    ProgressDialog progressDialog = null;
+
 
     public void initNavigation(){
         bottomNavigationView =findViewById(R.id.bottom_navigation);
@@ -83,6 +89,33 @@ public class BaseActivity extends AppCompatActivity {
     }
 
 
+
+    public void loadStart_(){
+        progressDialog.setTitle("Sending ...");
+        progressDialog.show();
+    }
+
+    public void loadStop_(){
+        progressDialog.hide();
+    }
+
+    public void showMessage(String message){
+        AlertDialog.Builder alt = new AlertDialog.Builder(this);
+        alt.setMessage(message);
+        alt.setTitle("Message");
+        alt.show();
+    }
+
+
+    public String getInput(int res){
+        return  ((EditText)findViewById(res)).getText().toString();
+    }
+
+    public void loadActivity(Class cls){
+        Intent i = new Intent(this, cls);
+        startActivity(i);
+
+    }
 
 
 }
