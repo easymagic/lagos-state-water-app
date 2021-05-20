@@ -63,7 +63,7 @@ public class Contact extends BaseActivity {
                         payLoadData.set("name",getInput(R.id.name));
                         payLoadData.set("email",getInput(R.id.email));
                         payLoadData.set("phone_number",getInput(R.id.phone_number));
-                        payLoadData.set("address",getInput(R.id.address));
+//                        payLoadData.set("address",getInput(R.id.address));
                         payLoadData.set("comment",getInput(R.id.comment));
                         payLoadData.set("type","feedback");
 

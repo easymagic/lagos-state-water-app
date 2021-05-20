@@ -59,7 +59,6 @@ public class ContactService {
         });
 
 
-
     }
 
     public static void sendData(ApiService.PayloadInterface payloadInterface){
