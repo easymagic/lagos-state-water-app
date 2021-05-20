@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.example.mylaswarcoapp.About;
+import com.example.mylaswarcoapp.Complaint;
 import com.example.mylaswarcoapp.Contact;
 import com.example.mylaswarcoapp.Dashboard;
 import com.example.mylaswarcoapp.Faqs;
@@ -23,6 +24,8 @@ public class BaseActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView = null;
     ProgressDialog progressDialog = null;
+
+    Intent intent = null;
 
 
     public void initNavigation(){
@@ -57,6 +60,8 @@ public class BaseActivity extends AppCompatActivity {
                 overridePendingTransition(0, 0);
                 return true;
             case R.id.Bottom_Complaint:
+
+                loadActivity(Complaint.class);
 
                 return true;
 
@@ -111,9 +116,10 @@ public class BaseActivity extends AppCompatActivity {
         return  ((EditText)findViewById(res)).getText().toString();
     }
 
-    public void loadActivity(Class cls){
-        Intent i = new Intent(this, cls);
-        startActivity(i);
+    public void loadActivity(Class<?> cls){
+
+        intent = new Intent(this, cls);
+        startActivity(intent);
 
     }
 

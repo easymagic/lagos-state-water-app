@@ -20,6 +20,7 @@ public class Complaint extends BaseActivity {
         setContentView(R.layout.activity_complaint);
         init();
         initNavigation();
+//        selectItem(R.id.Bottom_Complaint);
     }
 
 

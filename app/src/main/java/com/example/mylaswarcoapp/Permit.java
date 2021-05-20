@@ -23,7 +23,7 @@ public class Permit extends BaseActivity {
         setContentView(R.layout.activity_permit);
 
         initNavigation();
-        selectItem(R.id.Bottom_Dashboard);
+//        selectItem(R.id.Bottom_Dashboard);
 
         bore_hole=findViewById(R.id.app_borehole);
         drillers=findViewById(R.id.app_drillers);

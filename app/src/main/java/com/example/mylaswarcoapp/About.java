@@ -19,5 +19,7 @@ public class About extends BaseActivity {
 
         initNavigation();
 
+//        selectItem(R.id.Bottom_);
+
     }
 }

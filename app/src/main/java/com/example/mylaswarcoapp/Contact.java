@@ -19,7 +19,7 @@ public class Contact extends BaseActivity {
 
         initNavigation();
 
-        selectItem(R.id.Bottom_Contact);
+//        selectItem(R.id.Bottom_Contact);
 
     }
 

@@ -24,7 +24,7 @@ public class Guideline extends BaseActivity {
 
         initNavigation();
 
-        selectItem(R.id.Bottom_Dashboard);
+//        selectItem(R.id.Bottom_Dashboard);
 
         enablelaw=findViewById(R.id.card_enablelaw);
         groundwater=findViewById(R.id.card_groundwater);

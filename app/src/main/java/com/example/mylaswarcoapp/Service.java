@@ -19,7 +19,7 @@ public class Service extends BaseActivity {
 
         initNavigation();
 
-        selectItem(R.id.Bottom_Dashboard);
+//        selectItem(R.id.Bottom_Dashboard);
 
     }
 

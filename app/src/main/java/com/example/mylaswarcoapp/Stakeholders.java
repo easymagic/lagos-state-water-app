@@ -18,7 +18,7 @@ public class Stakeholders extends BaseActivity {
         setContentView(R.layout.activity_stakeholders);
 
         initNavigation();
-        selectItem(R.id.Bottom_Dashboard);
+//        selectItem(R.id.Bottom_Dashboard);
 
     }
 

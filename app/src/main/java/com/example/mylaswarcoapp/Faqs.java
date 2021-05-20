@@ -20,6 +20,8 @@ public class Faqs extends BaseActivity {
 
         initNavigation();
 
+//        selectItem(R.id.Bottom_Faqs);
+
     }
 
 }

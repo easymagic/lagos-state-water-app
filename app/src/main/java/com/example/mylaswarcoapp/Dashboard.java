@@ -80,10 +80,11 @@ public class Dashboard extends BaseActivity implements View.OnClickListener, Nav
 
     @Override
     public void onClick(View v) {
-        Intent i;
+//        Intent i;
         switch (v.getId()) {
 
             case R.id.about_card:
+
 
                 loadActivity(About.class);
 
@@ -91,6 +92,8 @@ public class Dashboard extends BaseActivity implements View.OnClickListener, Nav
 
             case R.id.service_card:
 
+//                Intent i = new Intent(this,Service.class);
+//                startActivity(i);
 
                 loadActivity(Service.class);
 
