@@ -12,7 +12,7 @@ import org.json.JSONObject;
 
 public class Complaint extends BaseActivity {
 
-    ProgressDialog progressDialog = null;
+//    ProgressDialog progressDialog = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +24,10 @@ public class Complaint extends BaseActivity {
     }
 
 
-    void init(){
+    public void init(){
 
-        progressDialog = new ProgressDialog(this);
+        initModule();
+
 
         ApiService.initContext(this);
 

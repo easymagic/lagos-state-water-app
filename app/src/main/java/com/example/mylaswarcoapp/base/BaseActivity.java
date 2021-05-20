@@ -27,6 +27,9 @@ public class BaseActivity extends AppCompatActivity {
 
     Intent intent = null;
 
+    public void initModule(){
+        progressDialog = new ProgressDialog(this);
+    }
 
     public void initNavigation(){
         bottomNavigationView =findViewById(R.id.bottom_navigation);
@@ -59,6 +62,7 @@ public class BaseActivity extends AppCompatActivity {
                         Dashboard.class));
                 overridePendingTransition(0, 0);
                 return true;
+
             case R.id.Bottom_Complaint:
 
                 loadActivity(Complaint.class);
