@@ -164,7 +164,7 @@
                     android:background="@drawable/submit_custom_button"
                     android:padding="10dp"
 
-                    android:text="Submit"
+                    android:text="Submit Feedback"
                     />
             </LinearLayout>
 
