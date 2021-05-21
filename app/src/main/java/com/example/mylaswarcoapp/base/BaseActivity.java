@@ -53,8 +53,14 @@ public class BaseActivity extends AppCompatActivity {
 
         switch (menuitem.getItemId()) {
             case R.id.Bottom_Faqs:
-                startActivity(new Intent(getApplicationContext(), Faqs.class));
-                overridePendingTransition(0, 0);
+
+                String whistleBlowingUrl = "https://laswarco.lagosstate.gov.ng/whistle-blowing/";
+                openBrowser(whistleBlowingUrl);
+
+//
+//                startActivity(new Intent(getApplicationContext(), Faqs.class));
+//                overridePendingTransition(0, 0);
+
                 return true;
 
             case R.id.Bottom_Dashboard:
@@ -120,11 +126,21 @@ public class BaseActivity extends AppCompatActivity {
         return  ((EditText)findViewById(res)).getText().toString();
     }
 
+    public void clearInput(int res){
+        ((EditText) findViewById(res)).setText("");
+    }
+
     public void loadActivity(Class<?> cls){
 
         intent = new Intent(this, cls);
         startActivity(intent);
 
+    }
+
+
+    public void openBrowser(String url){
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(browserIntent);
     }
 
 

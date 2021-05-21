@@ -57,6 +57,12 @@ public class Complaint extends BaseActivity {
 
                         showMessage(jsonObject.optString("message"));
 
+                        clearInput(R.id.name);
+                        clearInput(R.id.email);
+                        clearInput(R.id.phone_number);
+                        clearInput(R.id.address);
+                        clearInput(R.id.comment);
+
                     }
 
                     @Override
