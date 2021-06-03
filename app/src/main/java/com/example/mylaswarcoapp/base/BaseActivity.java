@@ -54,8 +54,8 @@ public class BaseActivity extends AppCompatActivity {
         switch (menuitem.getItemId()) {
             case R.id.Bottom_Faqs:
 
-                String whistleBlowingUrl = "https://laswarco.lagosstate.gov.ng/whistle-blowing/";
-                openBrowser(whistleBlowingUrl);
+                String faqUrl = "https://laswarco.lagosstate.gov.ng/faq/";
+                openBrowser(faqUrl);
 
 //
 //                startActivity(new Intent(getApplicationContext(), Faqs.class));
@@ -70,8 +70,11 @@ public class BaseActivity extends AppCompatActivity {
                 return true;
 
             case R.id.Bottom_Complaint:
+                startActivity(new Intent(getApplicationContext(),
+                        Complaint.class));
+               overridePendingTransition(0, 0);
 
-                loadActivity(Complaint.class);
+                //loadActivity(Complaint.class);
 
                 return true;
 

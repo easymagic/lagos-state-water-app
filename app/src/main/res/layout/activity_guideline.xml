@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Permit">
+    android:fitsSystemWindows="true"
+    tools:context=".Permit"
+    tools:openDrawer="">
 
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:alpha="60"
+        android:animateLayoutChanges="false"
+        android:background="#FCFCFC"
+        app:elevation="24dp"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/main_menu" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -23,41 +42,86 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/reorder_24" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingTop="15dp"
+        android:text="ENABLING LAWS"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <ImageView
+        android:layout_width="76dp"
+        android:layout_height="50dp"
+
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingTop="10dp"
+        android:src="@drawable/logo"
+        android:text="LASWARCO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        tools:layout_editor_absoluteY="0dp" />
+
+
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:orientation="vertical">
 
-
-            <RelativeLayout
-                android:id="@+id/RelativeLayout"
+            <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:background="@color/colorPrimary"
-                android:padding="20dp">
+                android:layout_height="150dp"
 
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="50dp">
 
                 <TextView
-                    android:id="@+id/Permit"
+                    android:id="@+id/Who_we_are"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="44dp"
-                    android:fontFamily="@font/poppins_bold"
+                    android:fontFamily="@font/poppins_medium"
                     android:includeFontPadding="false"
-                    android:text="Guidelines And Regulation"
-                    android:textColor="#fff"
-                    android:textSize="25sp" />
-
-            </RelativeLayout>
+                    android:letterSpacing="0.001"
+                    android:text="Compliance Guidelines"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp" />
+            </LinearLayout>
 
 
             <LinearLayout
                 android:id="@+id/layoutpgimg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-100dp"
+                android:layout_marginTop="-50dp"
                 android:padding="10dp">
 
 
@@ -72,43 +136,16 @@
                     <RelativeLayout
                         android:id="@+id/imgabt"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/regulation">
+                        android:layout_height="300dp"
+                        android:background="@drawable/water_monitors">
 
                     </RelativeLayout>
-
-
 
                 </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0px"
-                android:padding="5dp"
-                android:layout_marginBottom="0dp">
-
-
-
-
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:fontFamily="@font/raleway_medium"
-                        android:lineSpacingExtra="5dp"
-                        android:padding="10dp"
-                        android:text="@string/function"
-                        />
-
-
-
-
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -221,7 +258,7 @@
                         android:fontFamily="@font/raleway_medium"
                         android:lineSpacingExtra="2dp"
                         android:padding="10dp"
-                        android:text="Drinking Water Quality Regulation" />
+                        android:text="Packaged Water Service Guidelines" />
 
 
                 </com.google.android.material.card.MaterialCardView>
@@ -286,16 +323,8 @@
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
-
-
-
-
-
-
-
-
-
-
         </LinearLayout>
-    </ScrollView>
-</RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView> </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

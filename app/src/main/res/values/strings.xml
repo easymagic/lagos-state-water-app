@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyLASWARCOApp</string>
+    <string name="app_name">LASWARCO</string>
     <string name="naigation_drawer_open">Open navigation drawer </string>
     <string name="naigation_drawer_close">Close navigation drawer </string>
     <string name="title_activity_testing">TestingActivity</string>

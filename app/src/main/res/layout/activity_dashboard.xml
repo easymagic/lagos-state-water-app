@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".Dashboard"
-    tools:openDrawer="start">
+    tools:openDrawer="">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
@@ -37,7 +37,21 @@
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintStart_toStartOf="parent"
-                app:navigationIcon="@drawable/reorder_24" />
+                app:navigationIcon="@drawable/reorder_24"/>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginLeft="48dp"
+                android:fontFamily="@font/poppins_bold"
+                android:paddingTop="15dp"
+                android:text="LASWARCO"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="0dp" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -160,7 +174,7 @@
             <LinearLayout
                 android:id="@+id/linearLayout4"
                 android:layout_width="0dp"
-                android:layout_height="175dp"
+                android:layout_height="185dp"
                 android:orientation="horizontal"
                 android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -180,6 +194,7 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
+
 
                         <TextView
                             android:id="@+id/permit"

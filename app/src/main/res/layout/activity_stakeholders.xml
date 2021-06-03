@@ -1,252 +1,294 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Permit">
+    android:fitsSystemWindows="true"
+    tools:context=".Permit"
+    tools:openDrawer="">
 
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:alpha="60"
+        android:animateLayoutChanges="false"
+        android:background="#FCFCFC"
+        app:elevation="24dp"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/main_menu" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:itemBackground="@color/ic_launcher_background"
-        app:itemIconTint="@drawable/selector"
-        app:itemTextColor="@drawable/selector"
-        app:menu="@menu/menu_navigation" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
 
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:itemBackground="@color/ic_launcher_background"
+            app:itemIconTint="@drawable/selector"
+            app:itemTextColor="@drawable/selector"
+            app:menu="@menu/menu_navigation" />
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:id="@+id/RelativeLayout"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:background="@color/colorPrimary"
-                android:padding="20dp">
+                android:layout_height="match_parent">
 
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:minHeight="?attr/actionBarSize"
+                    android:theme="?attr/actionBarTheme"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:navigationIcon="@drawable/reorder_24" />
 
                 <TextView
-                    android:id="@+id/Permit"
+                    android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="44dp"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginLeft="48dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false"
-                    android:text="Industry Operators"
-                    android:textColor="#fff"
-                    android:textSize="25sp" />
+                    android:paddingTop="15dp"
+                    android:text="STAKEHOLDERS"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="0dp" />
 
-            </RelativeLayout>
-
-
-            <LinearLayout
-                android:id="@+id/layoutpgimg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-100dp"
-                android:padding="10dp">
-
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardviewimg"
-                    android:layout_width="0dp"
-                    android:layout_height="200dp"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:elevation="@dimen/cardview_compat_inset_shadow">
-
-                    <RelativeLayout
-                        android:id="@+id/imgabt"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/stakeholders">
-
-                    </RelativeLayout>
+                <ImageView
+                    android:layout_width="76dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingTop="10dp"
+                    android:src="@drawable/logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/textView4"
+                    tools:layout_editor_absoluteY="0dp" />
 
 
 
-                </com.google.android.material.card.MaterialCardView>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0px"
-                android:padding="5dp"
-                android:layout_marginBottom="0dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0px"
-                android:padding="5dp"
-                android:layout_marginBottom="0dp">
-
-
-                <com.google.android.material.card.MaterialCardView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    app:cardElevation="3dp">
+                    android:layout_marginTop="50dp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                    <TextView
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:fontFamily="@font/raleway_medium"
-                        android:lineSpacingExtra="2dp"
-                        android:padding="10dp"
-
-                        android:drawablePadding="10dp"
-                        android:text="Municipal" />
+                        android:layout_height="150dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="50dp">
 
 
+                        <TextView
+                            android:id="@+id/Who_we_are"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:includeFontPadding="false"
+                            android:letterSpacing="0.001"
+                            android:text="Industry Operator"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
 
 
-                </com.google.android.material.card.MaterialCardView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0px"
-                android:padding="5dp"
-                android:layout_marginBottom="0dp">
-
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    app:cardElevation="3dp">
-
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/layoutpgimg"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="10dp"
-                        android:fontFamily="@font/raleway_medium"
-
-                        android:drawablePadding="10dp"
-                        android:text="Water Tanker Operators"
-                        android:lineSpacingExtra="2dp"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-50dp"
+                        android:padding="10dp">
 
 
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardviewimg"
+                            android:layout_width="0dp"
+                            android:layout_height="280dp"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:elevation="@dimen/cardview_compat_inset_shadow">
+
+                            <RelativeLayout
+                                android:id="@+id/imgabt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/stakeholders">
+
+                            </RelativeLayout>
 
 
-                </com.google.android.material.card.MaterialCardView>
-            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0px"
-                android:padding="5dp"
-                android:layout_marginBottom="0dp">
+                    </LinearLayout>
 
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    app:cardElevation="3dp">
-
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="10dp"
-                        android:fontFamily="@font/raleway_medium"
-
-                        android:drawablePadding="10dp"
-                        android:text="Borehole Drillers"
-                        android:lineSpacingExtra="2dp"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0px"
+                        android:layout_marginBottom="0dp"
+                        android:padding="5dp">
 
 
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_municipal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            app:cardElevation="3dp">
+
+                            <TextView
+                                android:id="@+id/municipal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/raleway_medium"
+                                android:lineSpacingExtra="2dp"
+                                android:padding="10dp"
+                                android:text="Municipal" />
 
 
-                </com.google.android.material.card.MaterialCardView>
-            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0px"
-                android:padding="5dp"
-                android:layout_marginBottom="0dp">
-
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    app:cardElevation="3dp">
-
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="10dp"
-                        android:fontFamily="@font/raleway_medium"
-
-                        android:drawablePadding="10dp"
-                        android:text="Packaged Water An Beverages"
-                        android:lineSpacingExtra="2dp"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0px"
+                        android:layout_marginBottom="0dp"
+                        android:padding="5dp">
 
 
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_watertanker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            app:cardElevation="3dp">
+
+                            <TextView
+                                android:id="@+id/water_tanker"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/raleway_medium"
+                                android:lineSpacingExtra="2dp"
+                                android:padding="10dp"
+                                android:text="Water Tanker Operator" />
 
 
-                </com.google.android.material.card.MaterialCardView>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0px"
-                android:padding="5dp"
-                android:layout_marginBottom="60dp">
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
 
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    app:cardElevation="3dp">
-
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="10dp"
-                        android:fontFamily="@font/raleway_medium"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0px"
 
-                        android:drawablePadding="10dp"
-                        android:text="Wastewater Treatment"
-                        android:lineSpacingExtra="2dp"/>
+                        android:padding="5dp">
 
 
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_boreholedrillers"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            app:cardElevation="3dp">
+
+                            <TextView
+                                android:id="@+id/bore_hole"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/raleway_medium"
+                                android:lineSpacingExtra="2dp"
+                                android:padding="10dp"
+                                android:text="Borehole Drillers" />
+
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0px"
+
+                        android:padding="5dp">
 
 
-                </com.google.android.material.card.MaterialCardView>
-            </LinearLayout>
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_package_water"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            app:cardElevation="3dp">
+
+                            <TextView
+                                android:id="@+id/package_water"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/raleway_medium"
+                                android:lineSpacingExtra="2dp"
+                                android:padding="10dp"
+                                android:text="Packaged Water And Beverages" />
+
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0px"
+                        android:layout_marginBottom="60dp"
+                        android:padding="5dp">
 
 
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_wastewater"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            app:cardElevation="3dp">
 
-        </LinearLayout>
-    </ScrollView>
-</RelativeLayout>
+                            <TextView
+                                android:id="@+id/wastewater_treat"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/raleway_medium"
+                                android:lineSpacingExtra="2dp"
+                                android:padding="10dp"
+                                android:text="Wastewater Treatment" />
+
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView> </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
