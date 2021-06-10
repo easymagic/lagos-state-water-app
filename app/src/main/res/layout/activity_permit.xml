@@ -64,7 +64,7 @@
             android:layout_marginLeft="48dp"
             android:fontFamily="@font/poppins_bold"
             android:paddingTop="15dp"
-            android:text="APPLICATIONS"
+
             android:textColor="@color/white"
             android:textSize="16dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -134,9 +134,10 @@
 
                             <RelativeLayout
                                 android:id="@+id/imgabt"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/application">
+                                android:layout_width="300dp"
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/pdf">
 
                             </RelativeLayout>
 

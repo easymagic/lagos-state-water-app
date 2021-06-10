@@ -63,7 +63,7 @@
                 android:layout_marginLeft="48dp"
                 android:fontFamily="@font/poppins_bold"
                 android:paddingTop="15dp"
-                android:text="ABOUT US"
+
                 android:textColor="@color/white"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"

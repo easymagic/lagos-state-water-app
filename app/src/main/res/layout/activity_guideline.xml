@@ -58,48 +58,47 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/reorder_24" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:fontFamily="@font/poppins_bold"
-        android:paddingTop="15dp"
-        android:text="ENABLING LAWS"
-        android:textColor="@color/white"
-        android:textSize="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="0dp" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="48dp"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingTop="15dp"
 
-    <ImageView
-        android:layout_width="76dp"
-        android:layout_height="50dp"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="0dp" />
 
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:fontFamily="@font/poppins_bold"
-        android:paddingTop="10dp"
-        android:src="@drawable/logo"
-        android:text="LASWARCO"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        tools:layout_editor_absoluteY="0dp" />
+        <ImageView
+            android:layout_width="76dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingTop="10dp"
+            android:src="@drawable/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            tools:layout_editor_absoluteY="0dp" />
 
 
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical">
+            android:layout_marginTop="50dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
 
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-
                 android:gravity="center"
                 android:orientation="vertical"
                 android:paddingBottom="50dp">
