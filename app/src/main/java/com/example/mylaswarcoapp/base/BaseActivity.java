@@ -9,16 +9,26 @@ import android.view.View;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.mylaswarcoapp.About;
 import com.example.mylaswarcoapp.Complaint;
 import com.example.mylaswarcoapp.Contact;
 import com.example.mylaswarcoapp.Dashboard;
 import com.example.mylaswarcoapp.Faqs;
+import com.example.mylaswarcoapp.Guideline;
+import com.example.mylaswarcoapp.Permit;
 import com.example.mylaswarcoapp.R;
+import com.example.mylaswarcoapp.Service;
+import com.example.mylaswarcoapp.Stakeholders;
+import com.example.mylaswarcoapp.TestingActivity;
+import com.example.mylaswarcoapp.services.NavigationService;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 public class BaseActivity extends AppCompatActivity {
 
@@ -27,8 +37,36 @@ public class BaseActivity extends AppCompatActivity {
 
     Intent intent = null;
 
+    protected NavigationService navigationService = null;
+
+
     public void initModule(){
         progressDialog = new ProgressDialog(this);
+    }
+
+    public void initNavDrawer(NavigationView.OnNavigationItemSelectedListener context){
+        DrawerLayout drawerLayout;
+        Toolbar toolbar;
+        NavigationView navigationView;
+
+        //Hooks
+        drawerLayout = findViewById(R.id.drawer_layout);
+        toolbar = findViewById(R.id.toolbar);
+        navigationView = findViewById(R.id.nav_view);
+
+        //Toolbar
+        setSupportActionBar(toolbar);
+
+
+        //Navigation Menu
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.naigation_drawer_open, R.string.naigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        // Clickable Menu
+        navigationView.setNavigationItemSelectedListener(context);
+
     }
 
     public void initNavigation(){
@@ -41,6 +79,122 @@ public class BaseActivity extends AppCompatActivity {
             }
 
         });
+    }
+
+    public void loadAllNavigations(){
+
+        navigationService = new NavigationService();
+
+
+        navigationService.addNavigation(R.id.about_card, new NavigationService.NavigationCallback() {
+            @Override
+            public void callback() {
+                loadActivity(About.class);
+            }
+        });
+
+
+        navigationService.addNavigation(R.id.service_card, new NavigationService.NavigationCallback() {
+            @Override
+            public void callback() {
+
+                loadActivity(Service.class);
+
+            }
+        });
+
+
+        navigationService.addNavigation(R.id.permit_card, new NavigationService.NavigationCallback() {
+            @Override
+            public void callback() {
+                loadActivity(Permit.class);
+            }
+        });
+
+
+        navigationService.addNavigation(R.id.guideline_card, new NavigationService.NavigationCallback() {
+            @Override
+            public void callback() {
+                loadActivity(Guideline.class);
+            }
+        });
+
+
+        navigationService.addNavigation(R.id.stakeholders_card, new NavigationService.NavigationCallback() {
+            @Override
+            public void callback() {
+                loadActivity(Stakeholders.class);
+            }
+        });
+
+
+        navigationService.addNavigation(R.id.testing_card, new NavigationService.NavigationCallback() {
+            @Override
+            public void callback() {
+                loadActivity(TestingActivity.class);
+            }
+        });
+
+        //navigation item selected.
+
+        navigationService.addNavigation(R.id.nav_about, new NavigationService.NavigationCallback() {
+            @Override
+            public void callback() {
+                loadActivity(About.class);
+            }
+        });
+
+
+        navigationService.addNavigation(R.id.nav_service, new NavigationService.NavigationCallback() {
+            @Override
+            public void callback() {
+                loadActivity(Service.class);
+            }
+        });
+
+
+        navigationService.addNavigation(R.id.nav_permit, new NavigationService.NavigationCallback() {
+            @Override
+            public void callback() {
+                loadActivity(Permit.class);
+            }
+        });
+
+
+        navigationService.addNavigation(R.id.nav_guild, new NavigationService.NavigationCallback() {
+            @Override
+            public void callback() {
+                loadActivity(Guideline.class);
+            }
+        });
+
+
+        navigationService.addNavigation(R.id.nav_stakeholders, new NavigationService.NavigationCallback() {
+            @Override
+            public void callback() {
+                loadActivity(Stakeholders.class);
+            }
+        });
+
+
+
+        navigationService.addNavigation(R.id.nav_testing, new NavigationService.NavigationCallback() {
+            @Override
+            public void callback() {
+                loadActivity(TestingActivity.class);
+            }
+        });
+
+
+        navigationService.addNavigation(R.id.nav_home, new NavigationService.NavigationCallback() {
+            @Override
+            public void callback() {
+                loadActivity(Dashboard.class);
+            }
+        });
+
+
+
     }
 
     public void selectItem(int item){
