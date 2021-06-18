@@ -67,6 +67,8 @@ public class BaseActivity extends AppCompatActivity {
         // Clickable Menu
         navigationView.setNavigationItemSelectedListener(context);
 
+        initModule();
+
     }
 
     public void initNavigation(){

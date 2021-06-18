@@ -22,209 +22,34 @@ public class TestingActivity extends BaseActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing);
 
-      //  init();
+
       initNavigation();
-//        selectItem(R.id.Bottom_Dashboard);
 
-//        //Initialize and assign variable for bottom nav
-//        BottomNavigationView bottomNavigationView =findViewById(R.id.bottom_navigation);
-//
-//        // set dashboard selected
-//        bottomNavigationView.setSelectedItemId(R.id.Bottom_Dashboard);
-//
-//        // Perform ItemSelectedListener
-//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
-//
-//                switch (menuitem.getItemId()){
-//                    case R.id.Bottom_Faqs:
-//                        startActivity(new Intent(getApplicationContext(), Faqs.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
-//
-//                    case R.id.Bottom_Dashboard:
-//                        startActivity(new Intent(getApplicationContext(),Dashboard.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
-//                    case R.id.Bottom_Complaint:
-//                        startActivity(new Intent(getApplicationContext(),Complaint.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
-//
-//                    case R.id.Bottom_Contact:
-//                        startActivity(new Intent(getApplicationContext(),Contact.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
-//                }
-//                return false;
-//            }
-//        });
+        loadAllNavigations();
+        initNavDrawer(this);
 
-        //Variables
-        DrawerLayout drawerLayout;
-        Toolbar toolbar;
-        NavigationView navigationView;
-
-        //Hooks
-        drawerLayout = findViewById(R.id.drawer_layout);
-        toolbar = findViewById(R.id.toolbar);
-        navigationView = findViewById(R.id.nav_view);
-
-        //Toolbar
-        setSupportActionBar(toolbar);
-
-
-        //Navigation Menu
-        navigationView.bringToFront();
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.naigation_drawer_open, R.string.naigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-
-        // Clickable Menu
-        navigationView.setNavigationItemSelectedListener(this);
 
     }
 
-    private void init() {
-    }
 
-
-    //
 
 
 
     @Override
     public void onClick(View v) {
-//        Intent i;
-        switch (v.getId()) {
 
-            case R.id.about_card:
-
-
-                loadActivity(About.class);
-
-                break;
-
-            case R.id.service_card:
-
-//                Intent i = new Intent(this,Service.class);
-//                startActivity(i);
-
-                loadActivity(Service.class);
-
-                break;
-
-            case R.id.permit_card:
-
-                loadActivity(Permit.class);
-
-                break;
-            case R.id.guideline_card:
-
-                loadActivity(Guideline.class);
-
-                break;
-
-            case R.id.stakeholders_card:
-
-                loadActivity(Stakeholders.class);
-
-                break;
-            case R.id.testing_card:
-
-                loadActivity(TestingActivity.class);
-
-                break;
-            default:
-                break;
-        }
+        navigationService.triggerNavigation(v.getId());
 
     }
 
-    //Navigation clickable function
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-       /* switch (menuItem.getItemId()){
-
-            case R.id.nav_home:
-                Intent intent6=new Intent(Dashboard.this,Dashboard.class);
-                startActivity(intent6);
-                break;
-                case R.id.nav_about:
-                    Intent intent1=new Intent(Dashboard.this, About.class);
-                    startActivity(intent1);
-                break;
-            case R.id.nav_complaint:
-                Intent intent=new Intent(Dashboard.this,Complaint.class);
-                startActivity(intent);
-                break;
-
-            case R.id.nav_guild:
-                Intent intent2=new Intent(Dashboard.this,Guideline.class);
-                startActivity(intent2);
-                break;
-            case R.id.nav_stakeholders:
-                Intent intent3=new Intent(Dashboard.this,Stakeholders.class);
-                startActivity(intent3);
-                break;
-            case R.id.nav_permit:
-                Intent intent4=new Intent(Dashboard.this,Complaint.class);
-                startActivity(intent4);
-                break;
-            case R.id.nav_service:
-                Intent intent5=new Intent(Dashboard.this,Complaint.class);
-                startActivity(intent5);
-                break; */
-
-        int id = menuItem.getItemId();
-
-        if (id==R.id.nav_about) {
-
-            loadActivity(About.class);
-
-        }
-
-        if (id==R.id.nav_service){
-
-            loadActivity(Service.class);
-
-        }
-
-        if (id==R.id.nav_permit) {
-
-            loadActivity(Permit.class);
-
-        }
-
-        if (id==R.id.nav_guild){
-
-            loadActivity(Guideline.class);
-
-        }
-
-        if (id==R.id.nav_stakeholders){
-
-            loadActivity(Stakeholders.class);
-
-        }
-
-
-        if (id==R.id.nav_testing){
-
-
-            loadActivity(TestingActivity.class);
-
-        }
-
-        if (id==R.id.nav_home){
-
-            loadActivity(Dashboard.class);
-
-        }
+        navigationService.triggerNavigation(menuItem.getItemId());
 
         return true;
+
     }
 
 
