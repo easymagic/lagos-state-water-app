@@ -35,7 +35,7 @@ public class Contact extends BaseActivity implements View.OnClickListener, Navig
 
         initNavigation(R.id.Bottom_Contact);
 
-        initRequestService();
+//        initRequestService();
 
     }
 
