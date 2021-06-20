@@ -106,8 +106,9 @@ public class ApiService {
             @Override
             public void onErrorResponse(VolleyError error) {
 
-                payloadInterface.error(error.getMessage());
+                payloadInterface.error("Please check your network settings!");
                 payloadInterface.loadStop();
+                //error.getMessage()
 
             }
         }){

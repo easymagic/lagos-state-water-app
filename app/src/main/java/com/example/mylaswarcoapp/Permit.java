@@ -28,7 +28,7 @@ public class Permit extends BaseActivity implements View.OnClickListener, Naviga
 
         init();
 
-        initNavigation();
+        initNavigation(R.id.Bottom_Dashboard);
 
         loadAllNavigations();
 

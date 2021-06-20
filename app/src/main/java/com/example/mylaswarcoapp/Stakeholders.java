@@ -27,7 +27,7 @@ public class Stakeholders extends BaseActivity implements View.OnClickListener, 
         setContentView(R.layout.activity_stakeholders);
 
         init();
-        initNavigation();
+        initNavigation(R.id.Bottom_Dashboard);
 
         initNavDrawer(this);
         loadAllNavigations();

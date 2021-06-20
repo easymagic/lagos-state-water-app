@@ -36,7 +36,7 @@ public class Complaint extends BaseActivity implements View.OnClickListener, Nav
 
         initNavDrawer(this);
 
-        initNavigation();
+        initNavigation(R.id.Bottom_Complaint);
 
         initRequestService();
 

@@ -23,7 +23,7 @@ public class TestingActivity extends BaseActivity implements View.OnClickListene
         setContentView(R.layout.activity_testing);
 
 
-      initNavigation();
+      initNavigation(R.id.Bottom_Dashboard);
 
         loadAllNavigations();
         initNavDrawer(this);

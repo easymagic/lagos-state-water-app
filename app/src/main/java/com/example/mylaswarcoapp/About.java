@@ -33,7 +33,7 @@ public class About extends BaseActivity implements View.OnClickListener, Navigat
 
         initNavDrawer(this);
 
-        initNavigation();
+        initNavigation(R.id.Bottom_Dashboard);
 
     }
 

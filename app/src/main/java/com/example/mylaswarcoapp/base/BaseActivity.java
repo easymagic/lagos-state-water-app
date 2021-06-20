@@ -71,7 +71,7 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
-    public void initNavigation(){
+    public void initNavigation(int selected){
         bottomNavigationView =findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -81,6 +81,10 @@ public class BaseActivity extends AppCompatActivity {
             }
 
         });
+
+
+        bottomNavigationView.setSelectedItemId(selected);
+
     }
 
     public void loadAllNavigations(){

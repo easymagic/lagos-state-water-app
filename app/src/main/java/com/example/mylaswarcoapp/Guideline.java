@@ -27,7 +27,7 @@ public class Guideline extends BaseActivity implements View.OnClickListener, Nav
         setContentView(R.layout.activity_guideline);
 
 
-        initNavigation();
+        initNavigation(R.id.Bottom_Dashboard);
 
         loadAllNavigations();
 

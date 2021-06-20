@@ -33,7 +33,7 @@ public class Service extends BaseActivity implements View.OnClickListener, Navig
         loadAllNavigations();
         initNavDrawer(this);
 
-        initNavigation();
+        initNavigation(R.id.Bottom_Dashboard);
 
         init();
 

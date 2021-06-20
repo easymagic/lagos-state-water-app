@@ -24,7 +24,7 @@ public class Faqs extends BaseActivity implements View.OnClickListener, Navigati
 
         loadAllNavigations();
 
-        initNavigation();
+        initNavigation(R.id.Bottom_Faqs);
 
         initNavDrawer(this);
 
