@@ -82,8 +82,10 @@ public class BaseActivity extends AppCompatActivity {
 
         });
 
+        bottomNavigationView.getMenu().findItem(selected).setChecked(true);
 
-        bottomNavigationView.setSelectedItemId(selected);
+
+//        bottomNavigationView.setSelectedItemId(selected);
 
     }
 
